@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: example  # Imposta una password sicura
+      MYSQL_DATABASE: university    # Nome del database che vuoi creare
+    ports:
+      - "3306:3306"
+    volumes:
+      - db-data:/var/lib/mysql
+
+volumes:
+  db-data:
